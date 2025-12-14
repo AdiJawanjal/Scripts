@@ -1,0 +1,20 @@
+---
+- name: Run WWE Docker container with auto-restart
+  hosts: docker_server
+  become: yes
+
+  tasks:
+    - name: Pull Docker image
+      community.docker.docker_image:
+        name: adijawanjal/wweimage
+        source: pull
+
+    - name: Ensure container is running with restart policy
+      community.docker.docker_container:
+        name: wwe_container
+        image: adijawanjal/wweimage
+        state: started
+        restart_policy: always
+        published_ports:
+          - "80:80"
+        recreate: true

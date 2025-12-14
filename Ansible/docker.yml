@@ -49,7 +49,6 @@
         groups: docker
         append: yes
 
-  tasks:
     - name: Pull Docker image
       community.docker.docker_image:
         name: adijawanjal/wweimage

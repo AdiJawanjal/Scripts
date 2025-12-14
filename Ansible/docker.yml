@@ -16,6 +16,7 @@
           - curl
           - software-properties-common
           - apt-transport-https
+          - python3-docker
         state: present
 
     - name: Add Docker GPG key

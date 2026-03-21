@@ -38,12 +38,12 @@
         state: present
         update_cache: yes
 
-     - name: Start and enable Docker
-       systemd:
-         name: docker
-         state: started
-         enabled: yes
-         daemon_reload: yes
+    - name: Start and enable Docker
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+        daemon_reload: yes
  
     - name: Add ubuntu user to docker group
       user:

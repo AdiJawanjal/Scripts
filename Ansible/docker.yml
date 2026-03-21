@@ -38,12 +38,13 @@
         state: present
         update_cache: yes
 
-    - name: Start and enable Docker
-      service:
-        name: docker
-        state: started
-        enabled: yes
-
+     - name: Start and enable Docker
+       systemd:
+         name: docker
+         state: started
+         enabled: yes
+         daemon_reload: yes
+ 
     - name: Add ubuntu user to docker group
       user:
         name: ubuntu

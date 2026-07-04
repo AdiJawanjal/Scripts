@@ -65,3 +65,4 @@
         published_ports:
           - "80:80"
         recreate: true
+        
